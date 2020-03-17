@@ -168,7 +168,7 @@ public final class TorConfig {
      * When tor starts it waits for the control port and cookie auth files to be created before it proceeds to the
      * next step in startup. If these files are not created after a certain amount of time, then the startup has
      * failed.
-     *
+     * <p>
      * This method returns how much time to wait in seconds until failing the startup.
      */
     public int getFileCreationTimeout() {
@@ -178,19 +178,19 @@ public final class TorConfig {
     @Override
     public String toString() {
         return "TorConfig{" +
-                "geoIpFile=" + geoIpFile +
-                ", geoIpv6File=" + geoIpv6File +
-                ", torrcFile=" + torrcFile +
-                ", torExecutableFile=" + torExecutableFile +
-                ", hiddenServiceDir=" + hiddenServiceDir +
-                ", dataDir=" + dataDir +
-                ", configDir=" + configDir +
-                ", installDir=" + installDir +
-                ", homeDir=" + homeDir +
-                ", hostnameFile=" + hostnameFile +
-                ", cookieAuthFile=" + cookieAuthFile +
-                ", libraryPath=" + libraryPath +
-                '}';
+            "geoIpFile=" + geoIpFile +
+            ", geoIpv6File=" + geoIpv6File +
+            ", torrcFile=" + torrcFile +
+            ", torExecutableFile=" + torExecutableFile +
+            ", hiddenServiceDir=" + hiddenServiceDir +
+            ", dataDir=" + dataDir +
+            ", configDir=" + configDir +
+            ", installDir=" + installDir +
+            ", homeDir=" + homeDir +
+            ", hostnameFile=" + hostnameFile +
+            ", cookieAuthFile=" + cookieAuthFile +
+            ", libraryPath=" + libraryPath +
+            '}';
     }
 
     /**
@@ -354,7 +354,7 @@ public final class TorConfig {
          * When tor starts it waits for the control port and cookie auth files to be created before it proceeds to the
          * next step in startup. If these files are not created after a certain amount of time, then the startup has
          * failed.
-         *
+         * <p>
          * This method specifies how much time to wait until failing the startup.
          *
          * @param timeout in seconds
@@ -370,7 +370,7 @@ public final class TorConfig {
          * @return torConfig
          */
         public TorConfig build() {
-            if(homeDir == null) {
+            if (homeDir == null) {
                 String userHome = System.getProperty("user.home");
                 homeDir = (userHome != null && !"".equals(userHome) && !"/".equals(userHome)) ? new File(userHome) : configDir;
             }
@@ -403,23 +403,23 @@ public final class TorConfig {
                 libraryPath = torExecutableFile.getParentFile();
             }
 
-            if(hostnameFile == null) {
+            if (hostnameFile == null) {
                 hostnameFile = new File(dataDir, "hostname");
             }
 
-            if(cookieAuthFile == null) {
+            if (cookieAuthFile == null) {
                 cookieAuthFile = new File(dataDir, "control_auth_cookie");
             }
 
-            if(resolveConf == null) {
+            if (resolveConf == null) {
                 resolveConf = new File(configDir, "resolv.conf");
             }
 
-            if(controlPortFile == null) {
+            if (controlPortFile == null) {
                 controlPortFile = new File(dataDir, "control.txt");
             }
 
-            if(fileCreationTimeout <= 0) {
+            if (fileCreationTimeout <= 0) {
                 fileCreationTimeout = 15;
             }
 
@@ -445,7 +445,7 @@ public final class TorConfig {
         private static String getTorExecutableFileName() {
             switch (OsData.getOsType()) {
                 case ANDROID:
-                    return "tor.so";
+                    return "libtor.so";
                 case LINUX_32:
                 case LINUX_64:
                 case MAC:
