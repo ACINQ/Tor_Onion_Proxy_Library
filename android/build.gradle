@@ -20,7 +20,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
-        versionName "0.0.4"
+        versionName "0.0.5"
         consumerProguardFiles 'proguard-rules.pro'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -44,7 +44,7 @@ publishing {
         android(MavenPublication) {
             groupId 'com.msopentech.thali.toronionproxy.android'
             artifactId 'android'
-            version '0.0.4'
+            version '0.0.5'
             artifact(sourceJar)
             artifact("$buildDir/outputs/aar/android-release.aar")
             pom.withXml {
