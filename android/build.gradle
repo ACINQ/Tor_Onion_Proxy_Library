@@ -5,8 +5,8 @@ apply plugin: 'maven-publish'
 buildscript {
     repositories {
         mavenLocal()
-        mavenCentral()
         google()
+        jcenter()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:${androidplugin}"
@@ -20,7 +20,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
-        versionName "0.0.3"
+        versionName "0.0.4"
         consumerProguardFiles 'proguard-rules.pro'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -39,7 +39,7 @@ publishing {
         android(MavenPublication) {
             groupId 'com.msopentech.thali.toronionproxy.android'
             artifactId 'android'
-            version '0.0.3'
+            version '0.0.4'
             artifact(sourceJar)
             artifact("$buildDir/outputs/aar/android-release.aar")
             pom.withXml {
@@ -66,7 +66,7 @@ task sourceJar(type: Jar) {
 
 dependencies {
     implementation project(':universal')
-    implementation 'net.freehaven.tor.control:jtorctl:0.2'
+    implementation 'info.guardianproject:jtorctl:0.4'
     implementation 'org.slf4j:slf4j-api:1.7.25'
     implementation 'org.slf4j:slf4j-android:1.7.25'
     implementation 'com.android.support:appcompat-v7:28.0.0'

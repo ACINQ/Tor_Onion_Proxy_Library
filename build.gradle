@@ -1,15 +1,15 @@
-allprojects  {
-  apply plugin: 'maven'
-  group = 'com.msopentech.thali'
-  version = '0.0.3'
+allprojects {
+    apply plugin: 'maven'
+    group = 'com.msopentech.thali'
+    version = '0.0.4'
 }
 
 subprojects {
-  repositories {
-    mavenLocal()
-    mavenCentral()
-    maven { url "https://repo.spring.io/plugins-release" }
-  }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
 }
 
 evaluationDependsOn ":universal"
