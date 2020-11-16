@@ -7,6 +7,7 @@ buildscript {
         mavenLocal()
         mavenCentral()
         google()
+        jcenter()
     }
     dependencies {
         classpath "com.android.tools.build:gradle:${androidplugin}"
@@ -14,11 +15,11 @@ buildscript {
 }
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 30
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 28
+        targetSdkVersion 30
         versionCode 1
         versionName "0.0.4"
 
