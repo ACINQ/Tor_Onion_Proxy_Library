@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
 apply plugin: 'maven-publish'
 
 buildscript {
@@ -15,13 +14,14 @@ buildscript {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 32
+    namespace "com.msopentech.thali.android.installer"
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 30
+        targetSdkVersion 32
         versionCode 1
-        versionName "0.0.5"
+        versionName "0.0.6-SNAPSHOT"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -37,7 +37,7 @@ android {
 
 task sourceJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
-    classifier "source"
+    archiveClassifier = "source"
 }
 
 dependencies {
