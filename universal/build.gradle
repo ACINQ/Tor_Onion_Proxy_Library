@@ -4,7 +4,7 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 group = 'com.msopentech.thali'
-version = '0.0.6-SNAPSHOT'
+version = '0.0.6'
 
 repositories {
     mavenLocal()
@@ -31,9 +31,9 @@ publishing {
         android(MavenPublication) {
             groupId 'com.msopentech.thali'
             artifactId 'universal'
-            version '0.0.6-SNAPSHOT'
+            version '0.0.6'
             artifact(sourcesJar)
-            artifact("$buildDir/libs/universal-0.0.6-SNAPSHOT.jar")
+            artifact("$buildDir/libs/universal-0.0.6.jar")
         }
     }
 }
