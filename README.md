@@ -1,3 +1,9 @@
+---
+
+⚠️ This fork of the [Tor_Onion_Proxy_Library](https://github.com/thaliproject/Tor_Onion_Proxy_Library) is not maintained anymore. Use the parent project instead.
+
+---
+
 Tor Onion Proxy Library
 =======================
 NOTE: This project exists independently of the Tor Project.
